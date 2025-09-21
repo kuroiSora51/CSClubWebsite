@@ -9,19 +9,22 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="container">
+        <div class="container header-layout">
             <h1>CS Club</h1>
-            <nav>
-                <a href="/">Home</a>
+            <nav class="site-nav">
+                <a href="{% url 'core:home' %}">Home</a>
+                <a href="{% url 'core:meetings' %}">Weekly Meetings</a>
+                <a href="{% url 'core:events' %}">Events</a>
+                <a href="{% url 'core:projects' %}">Projects</a>
             </nav>
         </div>
     </header>
-    <main class="container">
+    <main class="container page-content">
         {% block content %}{% endblock %}
     </main>
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; {% now "Y" %} CS Club at CSM. All rights reserved.</p>
+            <p>&copy; {% now "Y" %} CS Club. All rights reserved.</p>
         </div>
     </footer>
 </body>

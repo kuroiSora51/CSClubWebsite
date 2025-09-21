@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Weekly Meetings | CS Club{% endblock %}
+
+{% block content %}
+<section class="page-intro">
+    <h2>Weekly Meetings</h2>
+    <p>We meet every Tuesday at 6:00 PM in the CS Lab. Expect a mix of community updates, lightning talks, and collaborative problem solving.</p>
+</section>
+
+<section class="card">
+    <h3>Agenda At a Glance</h3>
+    <ol class="agenda">
+        {% for item in agenda_items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ol>
+</section>
+
+<section class="card">
+    <h3>Algorithm Spotlight: {{ algorithm_spotlight.title }}</h3>
+    <p>{{ algorithm_spotlight.description }}</p>
+    <ul class="problem-list">
+        {% for problem in algorithm_spotlight.problems %}
+        <li>
+            <strong>{{ problem.name }}</strong>
+            <span>{{ problem.source }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="cta">
+    <h3>Have an idea for a talk or challenge?</h3>
+    <p>Submit it to our officers and we&apos;ll add it to a future meeting agenda.</p>
+    <a class="button" href="mailto:csclub@example.com">Email the team</a>
+</section>
+{% endblock %}

@@ -6,21 +6,24 @@
 <section class="hero">
     <h2>Welcome to the Computer Science Club</h2>
     <p>Learn, build, and collaborate with fellow students passionate about technology.</p>
-    <a class="button" href="#contact">Join the club</a>
+    <a class="button" href="{% url 'core:meetings' %}">See this week&apos;s meeting</a>
 </section>
 
 <section class="grid">
     <article>
         <h3>Weekly Meetings</h3>
-        <p>Join us every other Monday, at 3:30PM for lightning talks, coding challenges, and project nights.</p>
+        <p>Join us every Tuesday evening for lightning talks, coding challenges, and project nights.</p>
+        <a class="text-link" href="{% url 'core:meetings' %}">View the agenda →</a>
     </article>
     <article>
-        <h3>Workshops</h3>
-        <p>Hands-on sessions covering web development, data science, AI, and more taught by peers and alumni.</p>
+        <h3>Events</h3>
+        <p>Hands-on workshops, bootcamps, and outreach events to level up your skills and network.</p>
+        <a class="text-link" href="{% url 'core:events' %}">See upcoming events →</a>
     </article>
     <article>
-        <h3>Community</h3>
-        <p>Connect with mentors, explore internships, and build projects that make an impact on campus.</p>
+        <h3>Projects</h3>
+        <p>Collaborate on real projects, contribute ideas, and showcase your work in the club portfolio.</p>
+        <a class="text-link" href="{% url 'core:projects' %}">Explore projects →</a>
     </article>
 </section>
 

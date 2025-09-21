@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} | Projects | CS Club{% endblock %}
+
+{% block content %}
+<nav class="breadcrumb">
+    <a href="{% url 'core:projects' %}">← Back to projects</a>
+</nav>
+
+<article class="project-detail">
+    <header>
+        <h2>{{ project.title }}</h2>
+        <span class="badge">{{ project.status }}</span>
+    </header>
+    <p>{{ project.description }}</p>
+
+    {% if project.tech_stack %}
+    <section>
+        <h3>Tech Stack</h3>
+        <ul class="tag-list">
+            {% for tool in project.tech_stack %}
+            <li>{{ tool }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    {% if project.summary %}
+    <section>
+        <h3>What we&apos;re building</h3>
+        <p>{{ project.summary }}</p>
+    </section>
+    {% endif %}
+
+    <section class="card">
+        <h3>Join the team</h3>
+        <p>Email <a href="mailto:csclub@example.com">csclub@example.com</a> and mention the project name to get started.</p>
+    </section>
+</article>
+{% endblock %}

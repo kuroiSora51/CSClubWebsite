@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Events | CS Club{% endblock %}
+
+{% block content %}
+<section class="page-intro">
+    <h2>Upcoming Events</h2>
+    <p>Bootcamps, fairs, and community events to help you connect, learn, and share what you&apos;re building.</p>
+</section>
+
+<section class="events-list">
+    {% for event in upcoming_events %}
+    <article class="event-card">
+        <div class="event-meta">
+            <p class="event-date">{{ event.date }}</p>
+            <p class="event-location">{{ event.location }}</p>
+        </div>
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+    </article>
+    {% endfor %}
+</section>
+
+<section class="cta">
+    <h3>Want to host a workshop?</h3>
+    <p>Pitch your event idea and we&apos;ll help make it happen.</p>
+    <a class="button" href="mailto:csclub@example.com">Contact us</a>
+</section>
+{% endblock %}
